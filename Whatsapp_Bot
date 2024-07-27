@@ -1,0 +1,21 @@
+import pywhatkit
+import datetime
+import time
+
+def send_birthday_message(phone_number, message):
+    pywhatkit.sendwhatmsg(phone_number, message, hr, min )  # 03:00 PM #24HRS Format
+
+def check_date():
+    current_date = datetime.datetime.now().strftime("%Y-%m-%d")
+    target_date = "YYYY-MM-DD"  # Change this to the birthday date
+
+    if current_date == target_date:
+        phone_number = "+91 9XXXXXXXXX"  # Change this to the phone number
+        message = "HAPPY BIRTHDAY"
+        send_birthday_message(phone_number, message)
+    else:
+        print("TODAY IS NOT MY BIRTHDAY")
+
+while True:
+    check_date()
+    time.sleep(10)  # Check every 1 minute
